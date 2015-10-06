@@ -1,0 +1,46 @@
+  <div class="alert alert-warning" role="alert">Програмата взима последния въведен адрес, за извличане на данни.</div>
+  <!-- показва иконка за зареждане-->
+<div ng-show="loading">
+<img src="app/bower_components/loading/loading-spin.svg" width="64" height="64">
+<p>Loading...</p>
+</div>
+<table ng-hide="loading" class="table table-bordered">
+  		<thead>
+  			<tr class="active">
+			<th>Rest Api</th>
+			<th>Честота на обновяване в ms</th>
+			<th>Дата на добавяне</th>
+			<th>Опции</th>
+  			</tr>
+  		</thead>
+<tr ng-repeat="item in settings">
+  <td class="info">{{item.api}}</td>
+  <td class="info">{{item.frequency}}</td>
+  <td class="info">{{item.created_at}}</td>
+  <td class="info" ng-click="deleteSetting(item.id)"><a>Изтрий</a></td>
+</tr>
+</table>
+
+<div class="alert alert-danger" role="alert">За по-голяма сигурност, програмата сама въвежда "http://", моля въведете адреса без това.</div>
+<div class="panel panel-default col-md-8 col-sm-6 col-sm-offset-3 col-lg-8 col-lg-offset-2">
+	 <div class="panel-heading">Настройка на Устройства</div>
+	 <div class="panel-body">
+			<form ng-submit="submitSettings()">
+
+			<div class="form-group">
+				<input type="text" class="form-control input-sm" name="api" ng-model="settingData.api" placeholder="Rest APi На устройството без http://">
+			</div>
+
+			 <select class="form-control" name="frequency" ng-model="settingData.frequency">
+			  	<option ng-repeat="value in frequency"  value="{{value}}">{{value}}</option>
+			</select> 
+			
+			<!-- SUBMIT BUTTON -->
+			<div class="form-group text-right">	
+				<button type="submit" class="btn btn-primary btn-lg">Запамети</button>
+			</div>
+
+
+			</form>
+		</div>
+</div>

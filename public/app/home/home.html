@@ -1,0 +1,10 @@
+  <!-- LOADING ICON -->
+  <!-- show loading icon if the loading variable is set to true -->
+<div ng-show="loading">
+<img src="app/bower_components/loading/loading-spin.svg" width="64" height="64">
+<p>Loading...</p>
+</div>
+<div ng-repeat="value in deviceData.devices">
+<p>{{value.name}} : {{value.value}} </p>
+</div>
+<div ng-if="!deviceData.devices">{{deviceData}}</div>

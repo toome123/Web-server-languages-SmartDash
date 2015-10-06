@@ -1,0 +1,30 @@
+{
+  "name": "smart-dash",
+  "main": "yes",
+  "version": "0.0.1",
+  "authors": [
+    "toome123 <toome123@hotmail.co.uk>"
+  ],
+  "description": "Simple app to communicate with node js server and visualizate data",
+  "moduleType": [],
+  "keywords": [
+    "node",
+    "chart"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "~1.4.0",
+    "bootstrap": "~3.3.5",
+    "html5-boilerplate": "~5.2.0",
+    "loading": "*"
+  }
+}
