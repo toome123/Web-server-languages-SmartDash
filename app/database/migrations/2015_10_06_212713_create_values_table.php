@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDeviceTable extends Migration {
+class CreateValuesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,13 @@ class CreateDeviceTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('devices', function(Blueprint $table)
+		Schema::create('values', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name');
+			$table->integer('device_id')->unsigned();
+			$table->foreign('device_id')->references('id')->on('devices');
+			$table->float('value');
+			$table->string('unit');
 			$table->timestamps();
 		});
 	}
@@ -27,7 +30,7 @@ class CreateDeviceTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('devices');
+		Schema::drop('values');
 	}
 
 }
