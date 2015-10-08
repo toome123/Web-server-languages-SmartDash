@@ -12,8 +12,21 @@ class DeviceController extends \BaseController {
 		if(count($Settings) == 0){
 			return Response::json("Няма намерени ресурси, моля отидете на менюто: Настройки");
 		}else{
-			return Response::json(json_decode(file_get_contents($Settings['api'])));
+				$result = json_decode(file_get_contents($Settings['api']));
+		
+				$this->processNewData($result);
+				return Response::json($result);
 		}
+	}
+
+	public function processNewData($result){
+				for ($i=0; $i < count($result->devices); $i++) { 
+					if (Device::where('name','=',$result->devices[$i]->name)->count()) {
+						$deviceTemp = Device::where('name','=',$result->devices[$i]->name)->first();
+						$newValue = new Value(array('value' => $result->devices[$i]->value));
+						$save = $deviceTemp->values()->save($newValue);
+					}
+				}
 	}
 
 	
