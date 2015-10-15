@@ -8,3 +8,21 @@
 <p>{{value.name}} : {{value.value}} </p>
 </div>
 <div ng-if="!deviceData.devices">{{deviceData}}</div>
+
+<div ng></div>
+
+<table class="table">
+	<thead>
+		<th>Device ID</th>
+		<th>Values</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="value in deviceValues">
+			<td>{{value.id}}</td>
+			<td>{{value.value}}</td>
+		</tr>
+	</tbody>
+	<tfoot>
+
+	</tfoot>
+</table>

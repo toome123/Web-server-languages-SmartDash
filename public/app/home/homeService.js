@@ -7,4 +7,12 @@ angular.module('myApp.deviceApi',[])
 					}
 
 			}
-		});
+		})
+		.factory('deviceValue', function($http){
+			return {
+					get: function($value){
+						return $http.get('api/device/'+ $value);
+					}
+
+			}
+		})

@@ -19,6 +19,12 @@ class DeviceController extends \BaseController {
 		}
 	}
 
+	public function getValues($value) {
+			$deviceID = Device::where('name','=',$value)->first();
+			$values = Value::where('device_id','=',$deviceID->id)->orderBy('created_at','desc')->get();
+			return Response::json($values);
+	}
+
 	public function processNewData($result){
 				for ($i=0; $i < count($result->devices); $i++) { 
 					if (Device::where('name','=',$result->devices[$i]->name)->count()) {
