@@ -13,12 +13,14 @@ Route::get('/', function()
 // =============================================
 Route::group(array('prefix' => 'api'), function() {
 
+	Route::resource('settings', 'SettingsController', array('except' => array('create', 'edit', 'update')));
+
 	Route::resource('devices', 'DeviceController');
 
-	Route::resource('device/{value}', 'DeviceController@getValues');
+	Route::resource('device/{value}/', 'DeviceController@getValues');
 
-	Route::resource('settings', 'SettingsController', 
-		array('except' => array('create', 'edit', 'update')));
+	Route::resource('device/delete/{value}/', 'DeviceController@deleteDevice');
+
 });
 
 // =============================================
