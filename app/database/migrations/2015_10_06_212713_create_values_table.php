@@ -16,7 +16,7 @@ class CreateValuesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('device_id')->unsigned();
-			$table->foreign('device_id')->references('id')->on('devices');
+			$table->foreign('device_id')->references('id')->on('devices')->onDelete('cascade');
 			$table->float('value');
 			$table->string('unit');
 			$table->timestamps();
