@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost/serverSide/public',
+	'url' => 'http://localhost/serverSide-PHP-application/public',
 
 	/*
 	|--------------------------------------------------------------------------
