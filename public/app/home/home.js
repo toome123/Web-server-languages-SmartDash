@@ -9,13 +9,11 @@ angular.module('myApp.home', ['ngRoute'])
   });
 }])
 
-.controller('HomeCtrl', function($scope,Devices) {
+.controller('HomeCtrl', function($scope,Devices, deviceValue) {
 	$scope.loading = true;
 	Devices.get()
 			.success(function(data) {
 				$scope.deviceData = data;
 				$scope.loading = false;
 			});
-
-
 });

@@ -11,7 +11,7 @@ angular.module('myApp.settings', ['ngRoute'])
 
 .controller('SettingsCtrl', function($scope,Settings) {
 		$scope.loading = true;
-		//Allowned frequency
+		//Позволени честоти
 		$scope.frequency = [1000,2000,3000,5000,10000];
 		Settings.get()
 			.success(function(data) {
