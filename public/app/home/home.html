@@ -1,6 +1,6 @@
   <!-- LOADING ICON -->
   <!-- show loading icon if the loading variable is set to true -->
-<div ng-show="loading">
+<div ng-show="loading" data-ng-init="fetchNewData()">
 <img src="app/bower_components/loading/loading-spin.svg" width="64" height="64">
 <p>Loading...</p>
 </div>
@@ -11,7 +11,7 @@
 
 <div class="panel panel-default  col col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2">
 <div class="panel-heading">
-	<h4 ng-click="generateChart('Температура')">refresh</h4>
+	<h4 ng-click="fetchNewData()">refresh</h4>
 	{{data}}
 </div>
 <div class="panel-body">

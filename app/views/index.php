@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="app/bower_components/html5-boilerplate/dist/css/main.css">
   <link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="app/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="app/bower_components/angular-chart.js/dist/angular-chart.css">
 
  <style>
     body {
@@ -80,6 +81,8 @@
   <script src="app/bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
   <script src="app/bower_components/angular/angular.js"></script>
   <script src="app/bower_components/angular-route/angular-route.js"></script>
+  <script src="app/bower_components/Chart.js/Chart.js"></script>
+  <script src="app/bower_components/angular-chart.js/dist/angular-chart.js"></script>
   <script src="app/app.js"></script>
   <script src="app/home/home.js"></script>
   <script src="app/home/homeService.js"></script>

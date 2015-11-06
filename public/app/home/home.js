@@ -11,17 +11,15 @@ angular.module('myApp.home', ['ngRoute'])
 
 .controller('HomeCtrl', function($scope,Devices, deviceValue) {
 	$scope.loading = true;
-	Devices.get()
+	$scope.fetchNewData = function(){
+		Devices.get()
 			.success(function(data) {
 				$scope.deviceData = data;
 				$scope.loading = false;
+				$scope.generateChart('Влажност');
 			});
-<<<<<<< HEAD
-=======
 
-
-
-
+	};
 	$scope.generateChart = function(deviceName){
 		$scope.data = [];
 		$scope.testData = [];
@@ -35,9 +33,4 @@ angular.module('myApp.home', ['ngRoute'])
 		});
 	};
 
-
-	
-
-
->>>>>>> bb682a2e4c2e7c44c9c155957fa21b92efb16c66
 });
