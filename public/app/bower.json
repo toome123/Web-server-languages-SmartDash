@@ -25,6 +25,7 @@
     "angular-route": "~1.4.0",
     "bootstrap": "~3.3.5",
     "html5-boilerplate": "~5.2.0",
-    "loading": "*"
+    "loading": "*",
+    "angular-chart.js": "~0.8.5"
   }
 }

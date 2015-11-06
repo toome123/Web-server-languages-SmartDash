@@ -7,7 +7,8 @@ angular.module('myApp', [
   'myApp.deviceApi',
   'myApp.home',
   'myApp.settings',
-  'myApp.version'
+  'myApp.version',
+  'chart.js'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.otherwise({redirectTo: '/home'});

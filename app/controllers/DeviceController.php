@@ -1,4 +1,5 @@
 <?php
+use Carbon\Carbon;
 class DeviceController extends \BaseController {
 
 	/**
@@ -10,12 +11,11 @@ class DeviceController extends \BaseController {
 	{	
 		$Settings = Settings::orderBy('created_at','desc')->first();
 		if(count($Settings) == 0){
-			return Response::json("Няма намерени ресурси, моля отидете на менюто: Настройки");
+			return Response::json("Няма намерени ресурси, моля отидете на менюто: Настройки, за да добавите ресурси");
 		}else{
-				$result = json_decode(file_get_contents($Settings['api']));
-		
-				$this->processNewData($result);
-				return Response::json($result);
+					$result = json_decode(file_get_contents($Settings->api));
+					$this->processNewData($result);
+					return Response::json($result->devices);
 		}
 	}
 
@@ -33,6 +33,12 @@ class DeviceController extends \BaseController {
 						$save = $deviceTemp->values()->save($newValue);
 					}
 				}
+	}
+
+	public function deleteDevice($value) {
+			$device = Device::where('name','=',$value)->first();
+			$result = $device->delete();
+			return Response::json($result);
 	}
 
 	
