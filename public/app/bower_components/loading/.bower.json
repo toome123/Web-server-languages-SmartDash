@@ -1,0 +1,29 @@
+{
+  "name": "loading",
+  "homepage": "https://github.com/jxnblk/loading",
+  "main": [
+    "./loading-balls.svg",
+    "./loading-bars.svg",
+    "./loading-bubbles.svg",
+    "./loading-cubes.svg",
+    "./loading-cylon.svg",
+    "./loading-spin.svg",
+    "./loading-spinning-bubbles.svg",
+    "./loading-spokes.svg"
+  ],
+  "keywords": [
+    "loading",
+    "ajax",
+    "svg"
+  ],
+  "license": "MIT",
+  "_release": "1b90efd0af",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "1b90efd0affaf84f9e1fe462a6d79f06026521ea"
+  },
+  "_source": "git://github.com/jxnblk/loading.git",
+  "_target": "*",
+  "_originalSource": "loading"
+}
