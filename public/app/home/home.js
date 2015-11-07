@@ -11,10 +11,10 @@ angular.module('myApp.home', ['ngRoute'])
 .controller('HomeCtrl', function($scope,Devices, deviceValue, settings,$timeout) {
 	$scope.loading = true;
 	$scope.selectedDevice = 'Температура';
-	$scope.intervalTime = 1000;
+	$scope.intervalTime = 3000;
 	settings.get()
 		.success(function(data) {
-			$scope.intervalTime = data[data.length-1].frequency;
+			$scope.intervalTime = data[0].frequency;
 			console.log($scope.intervalTime);
 	});
 	$scope.fetchNewData = function(){
