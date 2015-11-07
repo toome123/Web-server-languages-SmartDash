@@ -15,4 +15,4 @@ bower install
 ```
 
 
-![alt tag](https://drive.google.com/file/d/0B7fcZPWJppsobWc3M1liS19Dc0U/view?usp=sharing)
+![alt tag](img.png)
