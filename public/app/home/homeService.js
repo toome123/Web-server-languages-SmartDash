@@ -15,4 +15,11 @@ angular.module('myApp.deviceApi',[])
 					}
 
 			}
+		}).factory('settings', function($http){
+			return {
+					get: function(){
+						return $http.get('api/settings');
+					}
+
+			}
 		});

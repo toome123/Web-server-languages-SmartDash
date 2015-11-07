@@ -8,19 +8,22 @@ angular.module('myApp.home', ['ngRoute'])
     controller: 'HomeCtrl'
   });
 }])
-.controller('HomeCtrl', function($scope,Devices, deviceValue,$timeout) {
+.controller('HomeCtrl', function($scope,Devices, deviceValue, settings,$timeout) {
 	$scope.loading = true;
 	$scope.selectedDevice = 'Температура';
 	$scope.intervalTime = 1000;
+	settings.get()
+		.success(function(data) {
+			$scope.intervalTime = data[data.length-1].frequency;
+			console.log($scope.intervalTime);
+	});
 	$scope.fetchNewData = function(){
 		Devices.get()
 			.success(function(data) {
 				$scope.deviceData = data;
-				console.log($scope.deviceData);
 				$scope.loading = false;
 				$scope.generateChart($scope.selectedDevice);
 			});
-
 	};
 	$scope.generateChart = function(deviceName){
 		$scope.data = [];
@@ -39,10 +42,9 @@ angular.module('myApp.home', ['ngRoute'])
 	    $timeout(function() {
 	      $scope.fetchNewData();
 	      $scope.intervalFunction();
-	    }, 1000)
+	    }, $scope.intervalTime)
   	};
 
  	$scope.intervalFunction($scope.intervalTime);
-
 
 });

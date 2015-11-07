@@ -15,8 +15,8 @@ class DeviceController extends \BaseController {
 		}else{
 					$result = json_decode(file_get_contents($Settings->api));
 					$this->processNewData($result);
-					$arrayName = array('result' => $result, 'frequency' => $Settings->frequency);
-					return Response::json($arrayName);
+					$resultArray = array('result' => $result);
+					return Response::json($resultArray);
 		}
 	}
 

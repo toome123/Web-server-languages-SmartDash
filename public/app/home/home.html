@@ -4,10 +4,8 @@
 <img src="app/bower_components/loading/loading-spin.svg" width="64" height="64">
 <p>Loading...</p>
 </div>
-{{deviceData}}
 <div class="row">
 	<div class="panel panel-default">
-		<h4 class="btn btn-primary" ng-click="fetchNewData()">Refresh</h4>
 		  <div class="panel-body">
 		   <span class="label label-danger" ng-if="!deviceData.result.devices">{{deviceData}}</span>
 		  	<h4 ng-repeat="value in deviceData.result.devices" class="col  col-lg-offset-1 col-lg-3 col-md-3 col-sm-10">
@@ -18,7 +16,7 @@
 	</div>	
 </div>
 
-<div class="panel panel-default  col col-md-8 col-lg-8 col-lg-offset-2 col-md-offset-2">
+<div class="panel panel-default  col col-md-10 col-lg-10 col-lg-offset-1 col-md-offset-1">
 <div class="panel-heading">
 	<select ng-change="fetchNewData()" ng-model="selectedDevice">
 		<option ng-repeat="device in deviceData.result.devices">{{device.name}}</option>
