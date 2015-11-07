@@ -8,7 +8,7 @@ class SettingsController extends \BaseController {
 	 */
 	public function index()
 	{
-		return Response::json(Settings::get());
+		return Response::json(Settings::orderBy('created_at','desc')->get());
 	}
 
 	/**
