@@ -11,10 +11,12 @@ angular.module('myApp.home', ['ngRoute'])
 .controller('HomeCtrl', function($scope,Devices, deviceValue,$timeout) {
 	$scope.loading = true;
 	$scope.selectedDevice = 'Температура';
+	$scope.intervalTime = 1000;
 	$scope.fetchNewData = function(){
 		Devices.get()
 			.success(function(data) {
 				$scope.deviceData = data;
+				console.log($scope.deviceData);
 				$scope.loading = false;
 				$scope.generateChart($scope.selectedDevice);
 			});
@@ -33,5 +35,14 @@ angular.module('myApp.home', ['ngRoute'])
   			$scope.data = [$scope.testData];
 		});
 	};
+  	$scope.intervalFunction = function(){
+	    $timeout(function() {
+	      $scope.fetchNewData();
+	      $scope.intervalFunction();
+	    }, 1000)
+  	};
+
+ 	$scope.intervalFunction($scope.intervalTime);
+
 
 });
